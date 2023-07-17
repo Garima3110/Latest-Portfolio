@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec6b57b1172f8600307780bb1edfc590b7d9323e
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
