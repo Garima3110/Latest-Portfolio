@@ -258,6 +258,13 @@ hr {
     /* text-decoration: underline; */
 }
 
+.projectLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+}
 .projectLinks a {
     color: antiquewhite;
     font-weight: bolder;
@@ -355,12 +362,12 @@ hr {
     .text {
         letter-spacing: 0.2rem;
         line-height: 1.4rem;
-        font-size: 0.5rem;
+        font-size: 0.9rem;
     }
-    .leftSection {
+    /* .leftSection {
         font-size: 1.5rem;
         font-weight: bolder;
-    }
+    } */
 }
 
 @media screen and (max-width:800px) {
