@@ -164,12 +164,21 @@ nav {
     border-radius: 5px;
     padding: 12px;
     font-size: 0.8rem;
-    width: 100%;
+    /* width: 100%; */
     cursor: pointer;
 }
 
+.resumeBtn {
+
+    /* color:transparent; */
+    background-color:beige;
+    width:100%;
+    color:#1e1a20;
+    border:2px solid black;
+}
+
 .displayButtons:hover {
-    font-weight: bolder;
+    font-size: 0.9rem;
 
 }
 
