@@ -423,3 +423,47 @@ hr {
     transform: translateY(0);
     opacity: 1;
   }
+
+
+  .menu-btn{
+    display: none;
+  }
+  @media only screen and (max-width:850px){
+
+    .right{
+        display: none;
+    }
+      /* creating a hamburger icon */
+      .menu-btn{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        border:3px solid  antiquewhite;
+        
+    
+      }
+      .menu-btn-burger1{
+        border: 2px solid antiquewhite;
+        margin: 4px;
+        display: inline-block;
+        height: 16px;
+      }
+      .menu-btn-burger2{
+        border: 2px solid antiquewhite;
+        margin: 4px;
+        display: inline-block;
+        height: 10px;
+      }
+      .menu-btn-burger3{
+        border: 2px solid antiquewhite;
+        margin: 4px;
+        display: inline-block;
+        height: 16px;
+      }
+  }

@@ -248,4 +248,18 @@ window.addEventListener("scroll", reveal);
 
 // To check the scroll position on page load
 reveal();
+
+const menuBtn=document.querySelector('.menu-btn');
+const navBar=document.querySelector('.right');
+menuBtn.addEventListener('click',()=>{
+  const currentDisplay=navBar.style.display;
+  if(currentDisplay==='none')
+  {
+    navBar.style.display='block';
+  }
+  else{
+    navBar.style.display='none';
+  }
+}
+)
   
