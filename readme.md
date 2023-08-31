@@ -1,4 +1,6 @@
-#Garima's portfolio
+#Welcome to Garima's portfolio!
+<p>This is my latest portfolio made using HTML,CSS and Javascript.In javascript I have used the ThreeJS library and along with that I have incorporated some animations on the 3D objects using the 3D animation library (gsap).<br>
+Hope you like it.</p>
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
