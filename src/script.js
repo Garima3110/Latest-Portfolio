@@ -3,11 +3,6 @@ import * as THREE from "three";
 import gsap from 'gsap';
 // import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
-// const gitButton=document.querySelector('.gitBtn');
-// gitButton.addEventListener('onclick',()=>{
-//   window.open(`https://github.com/Garima3110`, '_blank')
-// })
-
 THREE.ColorManagement.enabled = false;
 
 // textures
