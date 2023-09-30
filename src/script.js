@@ -82,7 +82,7 @@ scene.add(mesh1, mesh2, mesh3,mesh4);
 
 // Particles
 
-const count = 500;
+const count = 600;
 const positions = new Float32Array(count * 3);
 for (let i = 0; i < count; i++) {
   const i3 = i * 3;
@@ -98,8 +98,9 @@ particleGeometry.setAttribute(
 
 const particleMaterial = new THREE.PointsMaterial({
   color: parameters.materialColor,
-  size: 0.03,
+  size: 0.025,
   sizeAttenuation:true,
+  
 });
 
 const particles = new THREE.Points(particleGeometry, particleMaterial);

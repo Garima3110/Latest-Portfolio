@@ -280,6 +280,9 @@ hr {
   width: 20vw;
   height: 25vw;
 }
+.card a{
+  text-decoration: none;
+}
 .card img {
   /* margin: 20px 5vw; */
   filter: invert(100%);
@@ -341,9 +344,11 @@ hr {
 
 .footer {
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: gray;
-  padding: 10px;
+  padding: 15px;
+  font-weight: 100;
+  letter-spacing: 0.1rem;
 }
 
 .text {
