@@ -46,7 +46,7 @@ const mesh3 = new THREE.Mesh(
   material
 );
 const mesh4=new THREE.Mesh(new THREE.BoxGeometry(1.5,1.5,1.5,50,50),material);
-const meshes = [mesh1, mesh2,mesh4];
+const meshes = [mesh1, mesh2,mesh3,mesh4];
 // mesh2.visible=false;
 // mesh3.visible=false;
 mesh2.material.transparent=true;
