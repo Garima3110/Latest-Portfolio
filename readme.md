@@ -1,5 +1,5 @@
 <h2>Welcome to my portfolio..!✨</h2>
-<em><p>This is my latest portfolio made using HTML,CSS and Javascript.In javascript I have used the ThreeJS library and along with that I have incorporated some animations on the 3D objects using the 3D animation library (gsap).</p></em>
+<em><p>This is the latest portfolio website made using HTML,CSS and Javascript.In javascript I have used the ThreeJS library and along with that I have incorporated some animations on the 3D objects using the 3D animation library (gsap).</p></em>
 <br>
 <img width="946" alt="image" src="https://github.com/Garima3110/Latest-Portfolio/assets/110815240/94939425-744a-4e60-b0bf-44b27f19f213">
 <!-- <br>
