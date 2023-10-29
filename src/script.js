@@ -2,6 +2,7 @@ import * as THREE from "three";
 // import * as dat from "lil-gui";
 import gsap from 'gsap';
 // import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 THREE.ColorManagement.enabled = false;
 
@@ -10,6 +11,16 @@ const textureLoader = new THREE.TextureLoader();
 const gradientTexture = textureLoader.load("/textures/gradients/5.jpg");
 gradientTexture.magFilter = THREE.NearestFilter;
 
+//loading GLTF LOADER
+const gltfLoader = new GLTFLoader()
+
+gltfLoader.load(
+  '/models/AnimatedMorphSphere.gltf',
+  (gltf) =>
+  {
+      console.log(gltf)
+  }
+)
 /**
  * Debug
  */
