@@ -35,14 +35,8 @@ html {
   padding-right: 10%;
 }
 
-/* section:nth-child(odd)
-{
-    justify-content: flex-start;
-} */
-
 nav ul {
   display: flex;
-  /* flex-direction: column; */
   margin: 10px;
   list-style: none;
 }
@@ -58,7 +52,6 @@ nav {
   display: flex;
   flex-wrap: wrap;
   width: 100vw;
-  /* flex-wrap: wrap; */
   background-color: #1e1a20;
   justify-content: space-between;
   align-items: center;
@@ -160,12 +153,10 @@ nav {
   border-radius: 5px;
   padding: 12px;
   font-size: 0.8rem;
-  /* width: 100%; */
   cursor: pointer;
 }
 
 .resumeBtn {
-  /* color:transparent; */
   background-color: beige;
   width: 100%;
   color: #1e1a20;
@@ -187,12 +178,10 @@ hr {
 }
 
 .secondSection {
-  /* margin-top: 50px; */
   height: 100vh;
 
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
 }
@@ -219,7 +208,6 @@ hr {
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
 }
@@ -228,7 +216,6 @@ hr {
   font-size: 2rem;
   text-align: center;
   margin-top: 90px;
-  /* text-decoration: underline; */
 }
 
 #servicesDescription {
@@ -246,7 +233,6 @@ hr {
 .fourthSection {
   height: 100vh;
   display: flex;
-  /* flex-wrap: wrap; */
   text-align: center;
   flex-direction: column;
   align-items: center;
@@ -258,7 +244,6 @@ hr {
   font-size: 2rem;
   text-align: center;
   margin-top: 40px;
-  /* text-decoration: underline; */
 }
 
 .projectCards {
@@ -284,9 +269,7 @@ hr {
   text-decoration: none;
 }
 .card img {
-  /* margin: 20px 5vw; */
   filter: invert(100%);
-  /* max-width: 20vw; */
 }
 .card:hover {
   box-shadow: 1px 0px 4px 2px #f23a7b;
@@ -306,7 +289,6 @@ hr {
   font-size: 2rem;
   text-align: center;
   margin-top: 40px;
-  /* text-decoration: underline; */
 }
 
 .contactInfo {
@@ -314,7 +296,6 @@ hr {
   flex-wrap: wrap;
   flex-direction: column;
   margin-top: 40px;
-  /* align-items: center; */
 }
 
 .contactInfo div {
@@ -363,10 +344,6 @@ hr {
     line-height: 1.4rem;
     font-size: 0.9rem;
   }
-  /* .leftSection {
-        font-size: 1.5rem;
-        font-weight: bolder;
-    } */
 }
 
 @media screen and (max-width: 800px) {
@@ -466,5 +443,4 @@ hr {
 }
 ::-webkit-scrollbar-button {
   height: 40px;
-  /* background-color: white; */
 }
