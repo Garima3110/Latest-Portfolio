@@ -12,35 +12,35 @@ const gradientTexture = textureLoader.load("/textures/gradients/5.jpg");
 gradientTexture.magFilter = THREE.NearestFilter;
 
 
-// //loading GLTF LOADER
-// const gltfLoader = new GLTFLoader()
-// const wireframeMaterial = new THREE.MeshBasicMaterial({ color: 0xf23a7b, wireframe: true });
-// gltfLoader.load(
-//   '/models/Model 2/CesiumMan.gltf',
-//   (gltf) =>
-//   {
-//     const children = [...gltf.scene.children]
-//     console.log(gltf)
-//     gltf.scene.position.set(0,-30,0);
+//loading GLTF LOADER
+const gltfLoader = new GLTFLoader()
+const wireframeMaterial = new THREE.MeshBasicMaterial({ color: 0xf23a7b, wireframe: true });
+gltfLoader.load(
+  '/models/Model 2/CesiumMan.gltf',
+  (gltf) =>
+  {
+    const children = [...gltf.scene.children]
+    console.log(gltf)
+    gltf.scene.position.set(0,-30,0);
 
-//     const mixer = new THREE.AnimationMixer(gltf.scene)
-//     gltf.scene.traverse((child) => {
-//       if (child instanceof THREE.Mesh) {
-//           child.material = wireframeMaterial;
-//       }})
-//     for(const child of children)
-//     {
-//       const action = mixer.clipAction(gltf.animations[0])
-//       action.play();
-//       child.scale.set(1.5,1.5,1.5);
-//       child.rotation.set(true,-Math.PI,-Math.PI);
-// child.material=wireframeMaterial;
-//             console.log(child);
-//       // child.material.set({wireframe:true});
-//         scene.add(child)
-//     }
-//   }
-// )
+    const mixer = new THREE.AnimationMixer(gltf.scene)
+    gltf.scene.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+          child.material = wireframeMaterial;
+      }})
+    for(const child of children)
+    {
+      const action = mixer.clipAction(gltf.animations[0])
+      action.play();
+      child.scale.set(1.5,1.5,1.5);
+      child.rotation.set(true,-Math.PI,-Math.PI);
+child.material=wireframeMaterial;
+            console.log(child);
+      // child.material.set({wireframe:true});
+        scene.add(child)
+    }
+  }
+)
 
 
 /**
