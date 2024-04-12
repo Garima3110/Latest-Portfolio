@@ -1,8 +1,8 @@
 import * as THREE from "three";
 // import * as dat from "lil-gui";
-import gsap from 'gsap';
+import gsap from "gsap";
 // import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 THREE.ColorManagement.enabled = false;
 
@@ -11,16 +11,38 @@ const textureLoader = new THREE.TextureLoader();
 const gradientTexture = textureLoader.load("/textures/gradients/5.jpg");
 gradientTexture.magFilter = THREE.NearestFilter;
 
-//loading GLTF LOADER
-const gltfLoader = new GLTFLoader()
 
-gltfLoader.load(
-  '/models/AnimatedMorphSphere.gltf',
-  (gltf) =>
-  {
-      console.log(gltf)
-  }
-)
+// //loading GLTF LOADER
+// const gltfLoader = new GLTFLoader()
+// const wireframeMaterial = new THREE.MeshBasicMaterial({ color: 0xf23a7b, wireframe: true });
+// gltfLoader.load(
+//   '/models/Model 2/CesiumMan.gltf',
+//   (gltf) =>
+//   {
+//     const children = [...gltf.scene.children]
+//     console.log(gltf)
+//     gltf.scene.position.set(0,-30,0);
+
+//     const mixer = new THREE.AnimationMixer(gltf.scene)
+//     gltf.scene.traverse((child) => {
+//       if (child instanceof THREE.Mesh) {
+//           child.material = wireframeMaterial;
+//       }})
+//     for(const child of children)
+//     {
+//       const action = mixer.clipAction(gltf.animations[0])
+//       action.play();
+//       child.scale.set(1.5,1.5,1.5);
+//       child.rotation.set(true,-Math.PI,-Math.PI);
+// child.material=wireframeMaterial;
+//             console.log(child);
+//       // child.material.set({wireframe:true});
+//         scene.add(child)
+//     }
+//   }
+// )
+
+
 /**
  * Debug
  */
@@ -56,12 +78,15 @@ const mesh3 = new THREE.Mesh(
   new THREE.TorusKnotGeometry(0.6, 0.25, 100, 16),
   material
 );
-const mesh4=new THREE.Mesh(new THREE.BoxGeometry(1.5,1.5,1.5,50,50),material);
-const meshes = [mesh1, mesh2,mesh3,mesh4];
+const mesh4 = new THREE.Mesh(
+  new THREE.BoxGeometry(1.5, 1.5, 1.5, 50, 50),
+  material
+);
+const meshes = [mesh1, mesh2, mesh3, mesh4];
 // mesh2.visible=false;
 // mesh3.visible=false;
-mesh2.material.transparent=true;
-mesh2.material.opacity=0.8;
+mesh2.material.transparent = true;
+mesh2.material.opacity = 0.8;
 
 // lights
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -74,17 +99,16 @@ scene.add(directionalLight);
 // Positioning
 const objectDistance = 4;
 mesh1.position.y = -objectDistance * 0;
-mesh2.position.y = -objectDistance * 1-1;
+mesh2.position.y = -objectDistance * 1 - 1;
 mesh3.position.y = -objectDistance * 2;
-mesh4.position.y=-objectDistance*3-1.5;
+mesh4.position.y = -objectDistance * 3 - 1.5;
 
 mesh1.position.x = 2;
 mesh2.position.x = 0;
 mesh3.position.x = 2;
-mesh4.position.x=-1.7;
+mesh4.position.x = -1.7;
 
-scene.add(mesh1, mesh2, mesh3,mesh4);
-
+scene.add(mesh1, mesh2, mesh3, mesh4);
 
 // Particles
 
@@ -92,21 +116,22 @@ const count = 600;
 const positions = new Float32Array(count * 3);
 for (let i = 0; i < count; i++) {
   const i3 = i * 3;
-  positions[i3] = (Math.random()-0.5)*10;
-  positions[i3 + 1] = objectDistance*0.5-Math.random()*objectDistance*meshes.length;
-  positions[i3 + 2] = (Math.random()-0.5)*10;
+  positions[i3] = (Math.random() - 0.5) * 10;
+  positions[i3 + 1] =
+    objectDistance * 0.5 - Math.random() * objectDistance * meshes.length;
+  positions[i3 + 2] = (Math.random() - 0.5) * 10;
 }
 
 const particleGeometry = new THREE.BufferGeometry();
 particleGeometry.setAttribute(
-  'position',new THREE.Float32BufferAttribute(positions, 3)
+  "position",
+  new THREE.Float32BufferAttribute(positions, 3)
 );
 
 const particleMaterial = new THREE.PointsMaterial({
   color: parameters.materialColor,
   size: 0.025,
-  sizeAttenuation:true,
-  
+  sizeAttenuation: true,
 });
 
 const particles = new THREE.Points(particleGeometry, particleMaterial);
@@ -121,37 +146,36 @@ const sizes = {
 };
 
 let scrollY = window.scrollY;
-let currentSection=0;
-let newSection=0;
-window.addEventListener('scroll', () => {
-    scrollY = window.scrollY;
-  newSection=Math.round(scrollY/sizes.height);
+let currentSection = 0;
+let newSection = 0;
+window.addEventListener("scroll", () => {
+  scrollY = window.scrollY;
+  newSection = Math.round(scrollY / sizes.height);
   // console.log(newSection);
-  if(newSection!=currentSection)
-  {
-    currentSection=newSection;
-    gsap.to(meshes[currentSection].rotation,{
-        duration: 1.5,
-        ease: 'power2.inOut',
-        x: '+=6',
-        y: '+=3',
-        z: '+=1.5'
-    })
+  if (newSection != currentSection) {
+    currentSection = newSection;
+    gsap.to(meshes[currentSection].rotation, {
+      duration: 1.5,
+      ease: "power2.inOut",
+      x: "+=6",
+      y: "+=3",
+      z: "+=1.5",
+    });
   }
-    // console.log(scrollY);
-    // console.log(sizes.height)
+  // console.log(scrollY);
+  // console.log(sizes.height)
 });
 
-let cursor ={};
-cursor.x=0;
-cursor.y=0;
+let cursor = {};
+cursor.x = 0;
+cursor.y = 0;
 
-window.addEventListener('mousemove', (event) => {
+window.addEventListener("mousemove", (event) => {
   //   console.log("mouse moved");
-  cursor.x = (event.clientX / sizes.width) - 0.5;
-  cursor.y =(event.clientY / sizes.height) - 0.5;
-    // console.log(cursor.x);
-    // console.log(cursor.y);
+  cursor.x = event.clientX / sizes.width - 0.5;
+  cursor.y = event.clientY / sizes.height - 0.5;
+  // console.log(cursor.x);
+  // console.log(cursor.y);
 });
 
 // camera group
@@ -203,14 +227,14 @@ window.addEventListener("resize", () => {
  * Animate
  */
 const clock = new THREE.Clock();
-let currentTime =0;
+let currentTime = 0;
 
 const tick = () => {
   const elapsedTime = clock.getElapsedTime();
   const deltaTime = elapsedTime - currentTime;
   currentTime = elapsedTime;
   // controls.update();
-  camera.position.y = -(scrollY/sizes.height)*objectDistance/1.2;
+  camera.position.y = (-(scrollY / sizes.height) * objectDistance) / 1.2;
 
   //   parallax effect
   const parallaxX = cursor.x;
@@ -218,12 +242,12 @@ const tick = () => {
   cameraGroup.position.x +=
     (parallaxX - cameraGroup.position.x) * deltaTime * 5;
   cameraGroup.position.y +=
-    (parallaxY-cameraGroup.position.y) * deltaTime * 5;
+    (parallaxY - cameraGroup.position.y) * deltaTime * 5;
 
   // Animation
   for (const mesh of meshes) {
     mesh.rotation.x += deltaTime * 0.1;
-    mesh.rotation.y +=  deltaTime * 0.1;
+    mesh.rotation.y += deltaTime * 0.1;
   }
 
   // Render
@@ -256,17 +280,13 @@ window.addEventListener("scroll", reveal);
 // To check the scroll position on page load
 reveal();
 
-const menuBtn=document.querySelector('.menu-btn');
-const navBar=document.querySelector('.right');
-menuBtn.addEventListener('click',()=>{
-  const currentDisplay=navBar.style.display;
-  if(currentDisplay==='none')
-  {
-    navBar.style.display='block';
+const menuBtn = document.querySelector(".menu-btn");
+const navBar = document.querySelector(".right");
+menuBtn.addEventListener("click", () => {
+  const currentDisplay = navBar.style.display;
+  if (currentDisplay === "none") {
+    navBar.style.display = "block";
+  } else {
+    navBar.style.display = "none";
   }
-  else{
-    navBar.style.display='none';
-  }
-}
-)
-  
+});
