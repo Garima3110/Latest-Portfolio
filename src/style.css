@@ -152,20 +152,11 @@ nav {
   background-color: transparent;
   border-radius: 5px;
   padding: 12px;
+  margin-right: 10px;
   font-size: 0.8rem;
   cursor: pointer;
 }
 
-.resumeBtn {
-  background-color: beige;
-  width: 100%;
-  color: #1e1a20;
-  border: 2px solid black;
-}
-
-.displayButtons:hover {
-  font-size: 0.9rem;
-}
 
 hr {
   border: 0px;
